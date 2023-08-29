@@ -34,5 +34,6 @@ HW description
     LED -> Q2 -> R1:
     U_LED = 2V ; U_R1 = 0.6V
     P_Q2 = (40V-2.6V) * 4mA = 150mW      (leaves room up to 70V =>270mW)
-
+  - 40V reverse polarity
+    for protection in this error state a scottky diode is placed in the input path. so any reverse voltage can be blocked because the optocoppler diode has a reverse breakdown voltage of -6V
 - i2c adresses/registers
