@@ -13,7 +13,8 @@ Short description
 ## input channel
 the input channels operate in the voltage range of 5V - 40V. Each channel is designed as a current driven optocoppler diode set for about 4.5 mA.
 Designed in reference to https://electronics.stackexchange.com/questions/441277/optocoupler-circuit-accept-input-between-3-50-volt
-![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/7b527a98-d258-4681-a2e0-9565a7e3695d)
+
+![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/4a19afd1-7a48-4298-98ff-764ff730bc6e)
 
 ### current source LED driver
 the led of the input optocoppler is driven by a npn transistor current source to support variable input voltage. Q2 is changing resistance according to input voltage to maintain diode current at 4.5mA.
@@ -26,13 +27,17 @@ V_R2 = 5V - 1.2V = 3.8V  --> Ir2 = 3.8V / 20kohm = 0.19mA
 assuming Q1 is fully closed(no leakage current) required hFe of Q2 is 4mA / 0.19mA = 21. With the worst binning hFe = 100 we are safe on that side. Also there is room for lower input voltage. 3V  input requires nFe of 44, so it should also work (untested/unsafe!)
 #### 40V high voltage input case
 In this operation mode the voltage rating(Q2) and the power dissipation(Q2+R2) is the critical factor. There are two current paths to account for:
+```
 R2 -> Q1:
 V_Q1_CE is 1.2V so all voltage drops across R2: U_R2 = U_supply - 1.2V = 38.8V
-P_R2 = U * I = U^2 / R = (38.8V)^2 / 20kohm = 75mW    (58.8V => 173mW). Max dissipation of 0805 is 125mW. To be on the save side the 20k are placed as 2x10k.
+P_R2 = U * I = U^2 / R = (38.8V)^2 / 20kohm = 75mW    (58.8V => 173mW).
+
+Max dissipation of 0805 is 125mW. To be on the save side the 20k are placed as 2x10k.
 
 LED -> Q2 -> R1:
 U_LED = 2V ; U_R1 = 0.6V
 P_Q2 = (40V-2.6V) * 4mA = 150mW      (leaves room up to 70V =>270mW)
+```
 #### 40V reverse polarity
 for protection in this error state a scottky diode is placed in the input path. so any reverse voltage can be blocked because the optocoppler diode has a reverse breakdown voltage of -6V
 
