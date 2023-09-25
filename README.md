@@ -9,12 +9,14 @@ Short description
 
 # HW description
 ## power supply
+
 ## output channel
+
 ## input channel
 the input channels operate in the voltage range of 5V - 40V. Each channel is designed as a current driven optocoppler diode set for about 4.5 mA.
 Designed in reference to https://electronics.stackexchange.com/questions/441277/optocoupler-circuit-accept-input-between-3-50-volt
 
-![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/4a19afd1-7a48-4298-98ff-764ff730bc6e)
+![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/24c5da66-366c-436f-954b-165b17396760)
 
 ### current source LED driver
 the led of the input optocoppler is driven by a npn transistor current source to support variable input voltage. Q2 is changing resistance according to input voltage to maintain diode current at 4.5mA.
@@ -22,9 +24,13 @@ Current is set by R1. Current will regulate so that V_R1 = 0.6V ( =Vbe of Q1)
 
 #### 5V low voltage input case
 R2 has to source enough current to supply Q2 base. Question: what hFe is needed?
+```
 V_Q2_base = 1.2V
 V_R2 = 5V - 1.2V = 3.8V  --> Ir2 = 3.8V / 20kohm = 0.19mA
-assuming Q1 is fully closed(no leakage current) required hFe of Q2 is 4mA / 0.19mA = 21. With the worst binning hFe = 100 we are safe on that side. Also there is room for lower input voltage. 3V  input requires nFe of 44, so it should also work (untested/unsafe!)
+assuming Q1 is fully closed(no leakage current) required hFe of Q2 is 4mA / 0.19mA = 21
+```
+With the worst binning hFe = 100 we are safe on that side. Also there is room for lower input voltage. 3V  input requires nFe of 44, so it should also work (untested/unsafe!)
+
 #### 40V high voltage input case
 In this operation mode the voltage rating(Q2) and the power dissipation(Q2+R2) is the critical factor. There are two current paths to account for:
 ```
