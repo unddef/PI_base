@@ -9,10 +9,25 @@ Short description
 
 # HW description
 ## power supply
+### Fuse and crowbar
+### 5V DCDC converter
+### 3.3V LDO
 
-## output channel
+## I2C Bus
+### i2c adresses/registers
+### PI I2C connection
+### external connector
+#### bus pullups
+#### bus voltage supply
+#### GND isolation 
+### I2C Bus isolator 
 
-## input channel
+## RS485
+### Termination
+## 
+## output channels
+
+## input channels
 the input channels operate in the voltage range of 5V - 40V. Each channel is designed as a current driven optocoppler diode set for about 4.5 mA.
 Designed in reference to https://electronics.stackexchange.com/questions/441277/optocoupler-circuit-accept-input-between-3-50-volt
 
@@ -47,4 +62,6 @@ P_Q2 = (40V-2.6V) * 4mA = 150mW      (leaves room up to 70V =>270mW)
 #### 40V reverse polarity
 for protection in this error state a scottky diode is placed in the input path. so any reverse voltage can be blocked because the optocoppler diode has a reverse breakdown voltage of -6V
 
-## i2c adresses/registers
+### optocoupler digital input stage
+the phototransistor of U1 is supplied by the 3.3V system voltage. R5 acts as a current limiter(<49mA) to protect U1. R3 acts as a pulldown. Signal for digital input stage is taken from phototransistor output (= top of R3). This also drives M1's base (NMOS) to turn on a LED(~9.5mA) on activated input.
+
