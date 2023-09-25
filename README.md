@@ -42,18 +42,20 @@ R2 has to source enough current to supply Q2 base. Question: what hFe is needed?
 ```
 V_Q2_base = 1.2V
 V_R2 = 5V - 1.2V = 3.8V  --> Ir2 = 3.8V / 20kohm = 0.19mA
-assuming Q1 is fully closed(no leakage current) required hFe of Q2 is 4mA / 0.19mA = 21
+assuming Q1 is fully closed(no leakage current) required hFe of Q2 is 4.5mA / 0.19mA = 24
+
+[3V case: Ir2 = (3V-1.2V) /20kohm = 0.09mA -> needed hFe > 50]
 ```
-With the worst binning hFe = 100 we are safe on that side. Also there is room for lower input voltage. 3V  input requires nFe of 44, so it should also work (untested/unsafe!)
+With the worst binning hFe = 100 we are safe on that side. Also there is room for lower input voltage. 3V  input requires nFe of 50, so it should also work (untested/unsafe!)
 
 #### 40V high voltage input case
 In this operation mode the voltage rating(Q2) and the power dissipation(Q2+R2) is the critical factor. There are two current paths to account for:
 ```
 R2 -> Q1:
-V_Q1_CE is 1.2V so all voltage drops across R2: U_R2 = U_supply - 1.2V = 38.8V
-P_R2 = U * I = U^2 / R = (38.8V)^2 / 20kohm = 75mW    (58.8V => 173mW).
+V_Q1_CE is 1.2V so all voltage drops across R2: U_R2 = U_supply - 1.2V = 34.8V
+P_R2 = U * I = U^2 / R = (34.8V)^2 / 20kohm = 61mW    (58.8V => 173mW).
 
-Max dissipation of 0805 is 125mW. To be on the save side the 20k are placed as 2x10k.
+Max dissipation of 0805 is 125mW. To be on the save side (and leave room for more;) the 20k are placed as 2x10k.
 
 LED -> Q2 -> R1:
 U_LED = 2V ; U_R1 = 0.6V
