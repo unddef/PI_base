@@ -8,6 +8,12 @@ Short description
 - maximum ratings
 
 # HW description
+## connectors
+### PI connection
+### I2C connector
+### OneWire connector
+### RS485 connector
+
 ## power supply
 ### Fuse and crowbar
 ### 5V DCDC converter
@@ -15,8 +21,6 @@ Short description
 
 ## I2C Bus
 ### i2c adresses/registers
-### PI I2C connection
-### external connector
 #### bus pullups
 #### bus voltage supply
 #### GND isolation 
@@ -24,7 +28,7 @@ Short description
 
 ## RS485
 ### Termination
-## 
+ 
 ## output channels
 
 ## input channels
@@ -67,3 +71,10 @@ for protection in this error state a scottky diode is placed in the input path. 
 ### optocoupler digital input stage
 the phototransistor of U1 is supplied by the 3.3V system voltage. R5 acts as a current limiter(<49mA) to protect U1. R3 acts as a pulldown. Signal for digital input stage is taken from phototransistor output (= top of R3). This also drives M1's base (NMOS) to turn on a LED(~9.5mA) on activated input.
 
+#### max frequency
+the propagation delay of the input stage lays in the range of 8us (rise) 
+![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/e3de92a7-b995-49b4-a995-59a59334d5b3)
+and about 60us in case of falling edge:
+![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/2f7c6752-4496-487a-a1c9-ee845cab159b)
+
+In an practical application he maximum sampling capability is limited by the polling frequency on the I2C bus. As by default there is no interrupt when an input changes, the change is only detected after the next polling of input register by the uC. But TCA9535 provieds an interrupt pin which is exposed on the board as a one pin header to provide access for further improvement.
