@@ -21,7 +21,14 @@ The input is using a so called "crowbar" configuration. After the fuse there is 
 ![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/e7af824d-4be5-4e5e-b579-71d84d57db8b)
 
 ### 5V DCDC converter
+the DCDC converter is providing 5V (up to 3A) to power the raspberryPI. This is done by LMR33630 (U3). The design of the circuit is done mostly by TI's webbench tool. Input and output capacitors were increased a bit. Also there is a elko foreseen on the input side but not placed by default. This could be necessary with higher impedance sources.
+![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/44d234a6-0c98-4f36-afb8-aa0dba3ddea5)
+
 ### 3.3V LDO
+3.3V LDO is providing power (VCC) to the TCA9535 (powering output stage drivers + LEDs) and input stage LEDs. Also RS485 driver IC and I2C isolator are powered by VCC.
+![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/3d7f291f-130a-4452-b777-6a9e19991fbc)
+The LDO used (AMS1117) is nothing special in any way. 
+A "power good" LED (LED19) is provided to give visible feedback.
 
 ## I2C Bus
 ### i2c adresses/registers
