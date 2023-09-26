@@ -30,6 +30,13 @@ Short description
 ### Termination
  
 ## output channels
+the output channels are designed as PMOS (high side switched) stages. As main switch the PMOS SI4401 is used in a SO8 package. The PMOS is controlled by a NMOS driver stage which in turn is driven by the output of the TCA9535
+![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/f72a22b6-0c97-4ae1-991f-f4bb4c2ae579)
+
+The output of the TCA9535 (-> represented by V2) is directly driving the LED (D3) and is controlling the gate of M2. R5 is limiting the recharge current to about 50mA. R3 is a pulldown to provide a definded low level in off state.
+M2 is controlling the driving stage for M1. The driving stage has to cope with variable input voltage (V1, 7-36V). For input voltages below 12V D2 is inactive. R1 and R2 form a voltage divider pulling the base of M1 very close to GND when M2 is active.
+For input voltages higher then 12V D2 (= Zener diode) starts conducting. R1 becomes inactive. Therefore the base of M1 is clamped at 12V below V1 (this protects the base as more then 20V will destroy the PMOS)
+Finally D1 forms a "free wheeling" diode for inductive loads. This is another measure to protect M1 when switching inductive loads like pumps.
 
 ## input channels
 the input channels operate in the voltage range of 5V - 40V. Each channel is designed as a current driven optocoppler diode set for about 4.5 mA.
