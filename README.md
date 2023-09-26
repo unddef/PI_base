@@ -15,7 +15,11 @@ Short description
 ### RS485 connector
 
 ## power supply
+the supply voltage is provided by screw terminal U14. It is limited by a 5x20 fuse (max 10A) and the supplies the DCDC converter and the output stages
 ### Fuse and crowbar
+The input is using a so called "crowbar" configuration. After the fuse there is a diode (D25) in blocking direction between input and GND. If the input voltage is connected with wrong polarity this diode will conduct, short circuit the input voltage and blow the fuse.
+![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/e7af824d-4be5-4e5e-b579-71d84d57db8b)
+
 ### 5V DCDC converter
 ### 3.3V LDO
 
@@ -31,6 +35,7 @@ Short description
  
 ## output channels
 the output channels are designed as PMOS (high side switched) stages. As main switch the PMOS SI4401 is used in a SO8 package. The PMOS is controlled by a NMOS driver stage which in turn is driven by the output of the TCA9535
+
 ![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/f72a22b6-0c97-4ae1-991f-f4bb4c2ae579)
 
 The output of the TCA9535 (-> represented by V2) is directly driving the LED (D3) and is controlling the gate of M2. R5 is limiting the recharge current to about 50mA. R3 is a pulldown to provide a definded low level in off state.
