@@ -50,6 +50,8 @@ M2 is controlling the driving stage for M1. The driving stage has to cope with v
 For input voltages higher then 12V D2 (= Zener diode) starts conducting. R1 becomes inactive. Therefore the base of M1 is clamped at 12V below V1 (this protects the base as more then 20V will destroy the PMOS)
 Finally D1 forms a "free wheeling" diode for inductive loads. This is another measure to protect M1 when switching inductive loads like pumps.
 
+### rise/fall times
+
 ## input channels
 the input channels operate in the voltage range of 5V - 40V. Each channel is designed as a current driven optocoppler diode set for about 4.5 mA.
 Designed in reference to https://electronics.stackexchange.com/questions/441277/optocoupler-circuit-accept-input-between-3-50-volt
