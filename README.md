@@ -99,3 +99,9 @@ and about 60us in case of falling edge:
 ![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/2f7c6752-4496-487a-a1c9-ee845cab159b)
 
 In an practical application he maximum sampling capability is limited by the polling frequency on the I2C bus. As by default there is no interrupt when an input changes, the change is only detected after the next polling of input register by the uC. But TCA9535 provieds an interrupt pin which is exposed on the board as a one pin header to provide access for further improvement.
+
+#### max input voltage
+the maximum input voltage is limited by three factors:
+- max collector - emitter voltage of the NPN transistors -> 160V so not an issue
+- power dissipation in Q1
+- power dissipation in R2
