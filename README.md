@@ -1,13 +1,19 @@
-# i2c_io_board
+# PI_base
 the I2C IO board is designed to provide software independent 8ch IN + 8ch out hardware for 5 to 40V DC load switching.
 You can think of it as digital version of a relais board.
+
+# feature list
+
+# hardwre discription
+
+# example setups
 
 Short description
 - what its for
 - default design 5-24V
 - maximum ratings
 
-# HW description
+# HW discription
 # connectors
 ## PI connection
 ## I2C connector
