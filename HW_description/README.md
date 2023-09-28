@@ -1,4 +1,4 @@
-# HW discription
+# HW description
 # connectors
 ## PI connection
 ## I2C connector

@@ -4,7 +4,7 @@ You can think of it as digital version of a relais board.
 
 # feature list
 
-# hardwre discription
+# hardwre description
 a detailed documentation of the circuit can be found here
 
 # example setups
