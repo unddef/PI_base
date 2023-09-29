@@ -16,7 +16,7 @@ The input is using a so called "crowbar" configuration. Following the fuse there
 ![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/e7af824d-4be5-4e5e-b579-71d84d57db8b)
 
 ## 5V DCDC converter
-the DCDC converter is providing 5V (up to 3A) to power the raspberryPI. This is done by LMR33630 (U3). The design of the circuit is done mostly by TI's webbench tool. Input and output capacitors were increased a bit. Also there is a elko foreseen on the input side but not placed by default. Adding this cap might be necessary with higher impedance sources or long lines.
+the DCDC converter is providing 5V (@ up to 3A) to power the raspberryPI. This is done by LMR33630 (U3). The design of the circuit is done mostly by TI's webbench tool. Input and output capacitors were increased a bit. Also there is a electrolyte condensator foreseen on the input side but not placed by default. Adding this cap might be necessary with higher impedance sources or long lines.
 ![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/44d234a6-0c98-4f36-afb8-aa0dba3ddea5)
 
 ## 3.3V LDO
@@ -32,7 +32,7 @@ A "power good" LED (LED19) is provided to give visible feedback.
 The TCA9535 supports 8 different I2C adresses to select from by 3 pins. 
 ![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/f7ef5a2a-7ae7-42a1-b84d-3d07504683f3)
 
-There 3 pins can be connected to VCC or GND by resistors R1-6 to select bus adresses 0x20-0x27.
+There 3 pins can be connected to VCC or GND by resistors R1-6 to select bus adresses 0x20-0x27(7bit, without R/W bit).
 By default R2,R4,R6 are placed resulting in an address of 0x20
 
 ### bus pullups
@@ -113,5 +113,6 @@ the maximum input voltage is limited by three factors:
 ![grafik](https://github.com/unddef/i2c_io_board/assets/27676292/0306261f-c228-4511-ace2-953163a6a299)
 
 ## DIN rail mounting
-DIN rail mounting is done by "DELOCK 65961" rail mounts. The board has 3 drill holes on each side for mounting the rail clips. The provided board cutout gives access to unlock the clip from the rail.
+DIN rail mounting is done by "DELOCK 65961" rail mounts. The board has 3 drill holes on each side for mounting the rail clips. The provided board cut out gives access to unlock the clip from the rail.
+![grafik](https://github.com/unddef/PI_base/assets/27676292/80dda0a0-cf32-4ec3-9dcd-b0a5434d2950)
 
