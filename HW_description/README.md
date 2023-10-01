@@ -41,7 +41,17 @@ By default R2,R4,R6 are placed resulting in an address of 0x20
 ## I2C Bus isolator 
 
 # RS485
-## Termination
+the board is equipped with a RS485 transceiver IC (SP3485).  
+![grafik](https://github.com/unddef/PI_base/assets/27676292/583d9474-9d81-456c-ab08-1b1ef78f2088)  
+RE/DE pins are controlled by an "auto direction control" circuit inspired by https://iotips.tech/auto-direction-control-of-485-modules-using-not-gate/  
+![grafik](https://github.com/unddef/PI_base/assets/27676292/983f68ce-0e12-45dc-b31e-652617dbbd29)  
+in addition RX and TX LED's are placed to indicate transmission.  
+## Bus termination
+External connection can be connected by screw terminal and a pullup resistor of 120ohm can be enabled by jumper.  
+![grafik](https://github.com/unddef/PI_base/assets/27676292/a59c4a39-b9a1-4e89-b63b-3c8969fc52e3)  
+External A and B lines are biased by 5.1k resistors (to VCC/GND)!
+
+
  
 # output channels
 the output channels are designed as PMOS (high side switched) stages. As main switch the PMOS SI4401 is used in a SO8 package. The PMOS is controlled by a NMOS driver stage which in turn is driven by the output of the TCA9535
