@@ -4,8 +4,8 @@ This extension provides a bunch of functionality to interconnect with real world
 
 # feature list
 - wide input supply voltage 7-36V
-- - input fuse onboard
-- -  can run from 12V or 24V battery, solar systems, 24V industrial supply, old notebook PSUs etc
+  - input fuse onboard
+  -  can run from 12V or 24V battery, solar systems, 24V industrial supply, old notebook PSUs etc
 - 5V/3A DCDC converter to  power the PI from input voltage
 - 8 channel OUTPUT
   - max 4A per channel, 10A max in total
@@ -15,14 +15,14 @@ This extension provides a bunch of functionality to interconnect with real world
   - inputs with diode character (optocopler diode input) -> 4-5mA enable current required for improved noise immunity
   - option to provide two groups of true galvanic isolated inputs (2 groups of 4 inputs with islolated common ground)
 - I2C bus
-- - I2C bus on screw terminals
-- - I2C bus isolator to protect PI
+  - I2C bus on screw terminals
+  - I2C bus isolator to protect PI
   - bus voltage selectable by jumper (3.3V/5V)
   - bus pullups selectable by jumper
 - 1Wire bus on screw terminals
 - RS485 bus on screw terminals
-- - SP3485 half duplex transceiver
-- - hardware "transmit enable" circuit to eliminate the need of RX/TX direction control by GPIO pin
+  - SP3485 half duplex transceiver
+  - hardware "transmit enable" circuit to eliminate the need of RX/TX direction control by GPIO pin
   - TX + RX activity LED
 
 
