@@ -27,13 +27,7 @@ This extension provides a bunch of functionality to interconnect with real world
 
 
 - 
-# hardwre description
-a detailed documentation of the circuit can be found here:
-
-# example setups
-
-Short description
-- what its for
-- default design 5-24V
-- maximum ratings
+# hardware description
+a detailed documentation of the circuit board can be found here:
+[Detailed hardware documentation](../tree/main/HW_description)
 
