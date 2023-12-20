@@ -14,8 +14,7 @@ This extension provides a bunch of functionality to interconnect with real world
   - 5-40V input voltage
   - inputs with diode character (optocopler diode input) -> 4-5mA enable current required for improved noise immunity
   - option to provide two groups of true galvanic isolated inputs (2 groups of 4 inputs with islolated common ground)
-- I2C bus
-  - I2C bus on screw terminals
+- I2C bus on screw terminals
   - I2C bus isolator to protect PI
   - bus voltage selectable by jumper (3.3V/5V)
   - bus pullups selectable by jumper
