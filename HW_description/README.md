@@ -1,4 +1,7 @@
 # HW description
+her you can find detailed documentation of the hardware
+# schematics
+
 # connectors
 ## PI connection
 ## I2C connector
