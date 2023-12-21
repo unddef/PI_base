@@ -1,8 +1,9 @@
 # HW description
-her you can find detailed documentation of the hardware
+here you can find detailed documentation of the hardware
 # schematics
-
+schematics can be found in the file section in the subdirectory "schematics"
 # connectors
+one of the benefits of this PCB is the ability to connect electrical equipment easily. All external input and output connections are using screw terminal connectors
 ## PI connection
 ## I2C connector
 ## OneWire connector
