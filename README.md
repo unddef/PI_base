@@ -1,7 +1,9 @@
 # PI_base
-PIbase is designed as "base board" for an RaspberryPI. This means a Pi can be mounted ontop and is connected to the base.
+PIbase is designed as "base board" for a RaspberryPI. This means a Pi can be mounted ontop and is connected to the base.
 This extension provides a bunch of functionality to interconnect with real world applications: power supply, input and output channels, bus connectors etc.
+
 ![PIbase hardware](HW_description/PIbase_hardware_3d.png)
+
 # feature list
 - wide input supply voltage 7-36V
   - input fuse onboard
@@ -30,3 +32,5 @@ This extension provides a bunch of functionality to interconnect with real world
 a detailed documentation of the circuit board can be found here:
 [Detailed hardware documentation](HW_description)
 
+# getting started
+[You can find examples how to use the board on this page](getting_started)
